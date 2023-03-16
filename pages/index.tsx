@@ -1,9 +1,13 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
+import { Meta } from "@components/elements";
 
 const Home: NextPage = () => {
   return (
-   <h1>Home</h1>
-  )
-}
+    <>
+      <Meta subTitle="Homepage"/>
+      <h1>Home</h1>
+    </>
+  );
+};
 
-export default Home
+export default Home;
