@@ -4,6 +4,7 @@ type BtnProps = {
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "tertiary";
   fullWidth?: boolean;
+  className?: string;
 };
 
 type CustomStyle = {
@@ -20,14 +21,15 @@ export const Button: FC<BtnProps> = ({
   children = "click here",
   variant = "primary",
   fullWidth = false,
+  className = "",
 }) => {
   return (
     <button
       className={`${styles.btnContainer} ${VARIANT[variant]} ${
         fullWidth ? "w-full" : "w-fit"
-      }`}
+      } ${className}`}
     >
-      {children}
+      <p>{children}</p>
     </button>
   );
 };
