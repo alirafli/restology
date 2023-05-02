@@ -28,7 +28,6 @@ export const Button: FC<BtnProps> = ({
       className={`${styles.btnContainer} ${VARIANT[variant]} ${
         fullWidth ? "w-full" : "w-fit"
       } ${className}`}
-      data-testid="button"
     >
       <p>{children}</p>
     </button>

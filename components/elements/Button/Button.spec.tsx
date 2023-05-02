@@ -4,14 +4,18 @@ import "@testing-library/jest-dom";
 
 describe("Button component unit test", () => {
   it("should render the content base on children", () => {
-    render(<Button>click me</Button>);
-    const buttonElement = screen.getByTestId("button");
-    expect(buttonElement.textContent).toEqual("click me");
+    render(<Button>text button</Button>);
+    const buttonElement = screen.getByRole("button", {
+      name: /text button/i,
+    });
+    expect(buttonElement.textContent).toEqual("text button");
   });
 
   it("should have fullWidth class when giving fullWidth props", () => {
-    render(<Button fullWidth>click me</Button>);
-    const buttonElement = screen.getByTestId("button");
+    render(<Button fullWidth>text button</Button>);
+    const buttonElement = screen.getByRole("button", {
+      name: /text button/i,
+    });
     expect(buttonElement).toHaveClass("w-full");
   });
 });
