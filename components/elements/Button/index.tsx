@@ -5,6 +5,7 @@ type BtnProps = {
   variant?: "primary" | "secondary" | "tertiary";
   fullWidth?: boolean;
   className?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 type CustomStyle = {
@@ -22,12 +23,14 @@ export const Button: FC<BtnProps> = ({
   variant = "primary",
   fullWidth = false,
   className = "",
+  onClick,
 }) => {
   return (
     <button
       className={`${styles.btnContainer} ${VARIANT[variant]} ${
         fullWidth ? "w-full" : "w-fit"
       } ${className}`}
+      onClick={onClick}
     >
       <p>{children}</p>
     </button>

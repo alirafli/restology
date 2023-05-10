@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["components/*"],
+      "@features/*": ["features/*"],
+      "@store": ["store"],
+      "@hooks/*": ["hooks/*"],
     },
     "incremental": true
   },
